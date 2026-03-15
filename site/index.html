@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXD — Agent Experience Design</title>
+<meta name="description" content="How to design websites and web apps for AI agents. An open standard.">
+<meta property="og:title" content="AXD — Agent Experience Design">
+<meta property="og:description" content="UX is for humans. AXD is for agents.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+    --black: #111;
+    --gray: #555;
+    --light: #999;
+    --border: #e0e0e0;
+    --bg: #fff;
+    --bg-aside: #f8f8f8;
+    --accent: #111;
+    --max-w: 680px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif);
+    color: var(--black);
+    background: var(--bg);
+    font-size: 19px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    align-items: baseline;
+    border-bottom: 1px solid var(--border);
+  }
+  nav .brand {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  nav a {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--black); }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 5rem 0 2rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero .subtitle {
+    font-size: 1.25rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .hero .byline {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--light);
+  }
+  .hero .byline a {
+    color: var(--light);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+  }
+
+  /* ── ARTICLE BODY ── */
+  article h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3.5rem 0 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  article h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 2.5rem 0 0.75rem;
+    line-height: 1.35;
+  }
+  article p {
+    margin-bottom: 1.25rem;
+  }
+  article strong {
+    font-weight: 600;
+  }
+  article a {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+  article a:hover {
+    text-decoration-color: var(--black);
+  }
+  article em {
+    font-style: italic;
+  }
+
+  /* ── LINEAGE ── */
+  .lineage {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 2rem 0 3rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+  .lineage .era {
+    text-align: center;
+  }
+  .lineage .era .label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+  }
+  .lineage .era .desc {
+    font-size: 0.75rem;
+    color: var(--light);
+    display: block;
+    margin-top: 0.1rem;
+  }
+  .lineage .era.current .label {
+    font-size: 1.3rem;
+  }
+  .lineage .arrow {
+    color: var(--border);
+    font-size: 1.2rem;
+  }
+
+  /* ── PRINCIPLES LIST ── */
+  .principles-list {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+  .principles-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .principles-list li:first-child {
+    border-top: 1px solid var(--border);
+  }
+  .principles-list .num {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--light);
+    min-width: 1.5rem;
+    flex-shrink: 0;
+  }
+  .principles-list .title {
+    font-weight: 600;
+  }
+  .principles-list .desc {
+    color: var(--gray);
+    font-size: 0.95rem;
+  }
+
+  /* ── PRIMITIVES GRID ── */
+  .primitives {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .prim-tag {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .prim-tag:hover {
+    border-color: var(--black);
+    color: var(--black);
+  }
+
+  /* ── ASIDE BOX ── */
+  .aside-box {
+    background: var(--bg-aside);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--gray);
+  }
+  .aside-box .aside-title {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .aside-box code {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    background: #eee;
+    padding: 0.15rem 0.35rem;
+    border-radius: 2px;
+  }
+  .aside-box a {
+    color: var(--gray);
+    text-decoration: underline;
+  }
+
+  /* ── CODE BLOCK ── */
+  .code-block {
+    background: var(--black);
+    color: #ccc;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    line-height: 1.6;
+    border-radius: 2px;
+  }
+  .code-block .prompt { color: #888; }
+  .code-block .cmd { color: #fff; }
+
+  /* ── STACK ── */
+  .stack-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+  .stack-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .stack-list li:first-child { border-top: 1px solid var(--border); }
+  .stack-list .layer-num {
+    color: var(--light);
+    font-size: 0.75rem;
+    min-width: 2rem;
+  }
+  .stack-list .layer-name { font-weight: 500; flex: 1; }
+  .stack-list .layer-desc { color: var(--light); font-size: 0.8rem; }
+
+  /* ── SCORING ── */
+  .levels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+    font-family: var(--sans);
+  }
+  .level {
+    background: var(--bg);
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .level .score {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+  .level .label {
+    font-size: 0.72rem;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LINK CARDS ── */
+  .link-card {
+    display: block;
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    color: var(--black);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  .link-card:hover { border-color: var(--black); }
+  .link-card .card-title {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .link-card .card-desc {
+    color: var(--gray);
+    font-size: 0.82rem;
+  }
+
+  /* ── SEPARATOR ── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--light);
+  }
+  footer a {
+    color: var(--light);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero { padding: 3rem 0 1.5rem; }
+    article h2 { font-size: 1.6rem; }
+    .lineage { gap: 0.75rem; }
+    .lineage .era .label { font-size: 0.95rem; }
+    .lineage .era.current .label { font-size: 1.1rem; }
+    .levels { grid-template-columns: repeat(2, 1fr); }
+    nav { gap: 0.4rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">AXD</a>
+  <a href="#principles">Principles</a>
+  <a href="#primitives">Primitives</a>
+  <a href="#anti-patterns">Anti-Patterns</a>
+  <a href="#scoring">Scoring</a>
+  <a href="#stack">Stack</a>
+  <a href="https://github.com/soulsdotzip/axd">GitHub</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <h1>Agent Experience Design</h1>
+  <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AXD is how you design websites and web apps for agents — the same way UX taught us to design for humans.</p>
+  <p class="byline">An open standard by <a href="https://souls.zip">souls.zip</a> · February 2026</p>
+</header>
+
+<article>
+
+<p>Today's web was built for humans. Every button, every form, every navigation menu assumes a person with eyes and hands. But the fastest-growing user base on the internet isn't human — it's AI agents browsing sites, calling APIs, reading docs, and completing tasks on behalf of people.</p>
+
+<p>Most websites are invisible to agents. JavaScript-rendered pages with no structured data. Auth flows that require clicking through browser popups. Error messages that say "something went wrong." These aren't edge cases — they're the default. <strong>Every website already has an agent experience. The question is whether it's good or bad.</strong></p>
+
+<p>AXD is the practice of designing your web presence so both humans and agents can use it. Not by building a separate "agent version" — by building the same site better.</p>
+
+<div class="lineage">
+  <div class="era">
+    <span class="label">UX</span>
+    <span class="desc">Design for humans</span>
+  </div>
+  <span class="arrow">→</span>
+  <div class="era">
+    <span class="label">DX</span>
+    <span class="desc">Design for developers</span>
+  </div>
+  <span class="arrow">→</span>
+  <div class="era current">
+    <span class="label"><strong>AXD</strong></span>
+    <span class="desc">Design for agents</span>
+  </div>
+</div>
+
+<hr>
+
+<h2 id="principles">The 12 Principles</h2>
+
+<p>The foundation of Agent Experience Design. Each principle addresses a specific way websites fail agents today — and how to fix it.</p>
+
+<ol class="principles-list">
+  <li><span class="num">I</span><span><span class="title">Agents are users.</span> <span class="desc">Treat agents as a real user persona alongside your human users.</span></span></li>
+  <li><span class="num">II</span><span><span class="title">Structure is the interface.</span> <span class="desc">Your API responses, HTML structure, and data formats are the agent's UI.</span></span></li>
+  <li><span class="num">III</span><span><span class="title">Context beats prompting.</span> <span class="desc">A self-describing site beats clever instructions every time.</span></span></li>
+  <li><span class="num">IV</span><span><span class="title">Open ecosystems win.</span> <span class="desc">Let people bring their own agents. Don't lock them into yours.</span></span></li>
+  <li><span class="num">V</span><span><span class="title">Every action needs feedback.</span> <span class="desc">Agents can't see your success toast. Return structured results.</span></span></li>
+  <li><span class="num">VI</span><span><span class="title">Recovery is mandatory.</span> <span class="desc">Typed errors with retry guidance. Not "something went wrong."</span></span></li>
+  <li><span class="num">VII</span><span><span class="title">Discovery is part of the product.</span> <span class="desc">If agents can't find your capabilities, they don't exist.</span></span></li>
+  <li><span class="num">VIII</span><span><span class="title">Auth is experience.</span> <span class="desc">Browser-only OAuth kills agents. Scoped tokens enable them.</span></span></li>
+  <li><span class="num">IX</span><span><span class="title">Memory and events for long work.</span> <span class="desc">Agents don't stay on the page. Support async and resumability.</span></span></li>
+  <li><span class="num">X</span><span><span class="title">Trust must be computable.</span> <span class="desc">Machine-readable provenance, not marketing badges.</span></span></li>
+  <li><span class="num">XI</span><span><span class="title">Autonomy must be bounded.</span> <span class="desc">Label safe vs dangerous actions. Let agents move fast within limits.</span></span></li>
+  <li><span class="num">XII</span><span><span class="title">Accessibility for agents.</span> <span class="desc">Design for the range: large models and small, rich context and limited.</span></span></li>
+</ol>
+
+<hr>
+
+<h2 id="primitives">The 15 Primitives</h2>
+
+<p>The building blocks of agent experience on the web. Each primitive is a category of interaction that agents need from your site.</p>
+
+<div class="primitives">
+  <span class="prim-tag">Context</span>
+  <span class="prim-tag">Access</span>
+  <span class="prim-tag">Navigation</span>
+  <span class="prim-tag">Discovery</span>
+  <span class="prim-tag">Notifications</span>
+  <span class="prim-tag">Memory</span>
+  <span class="prim-tag">Identity</span>
+  <span class="prim-tag">Feedback</span>
+  <span class="prim-tag">Recovery</span>
+  <span class="prim-tag">Communication</span>
+  <span class="prim-tag">Autonomy</span>
+  <span class="prim-tag">Onboarding</span>
+  <span class="prim-tag">Social Proof</span>
+  <span class="prim-tag">Orchestration</span>
+  <span class="prim-tag">Governance</span>
+</div>
+
+<p><strong>Context</strong> — Can agents understand what your site does? Through structured data, semantic HTML, <code>llms.txt</code>, and clear page descriptions.</p>
+
+<p><strong>Access</strong> — Can agents authenticate? Scoped API tokens over browser-only OAuth. Explicit permission errors. No CAPTCHAs on API endpoints.</p>
+
+<p><strong>Navigation</strong> — Can agents find their way around? Sitemaps, linked resources, next-action hints in API responses. Not visual menus only.</p>
+
+<p><strong>Discovery</strong> — Can agents find your features? Root-level capability indexes, structured search results, metadata on every resource.</p>
+
+<p><strong>Feedback</strong> — Do agents know if their actions worked? Every mutation returns resulting state. Long operations return progress. No silent success.</p>
+
+<p><strong>Recovery</strong> — Can agents self-recover from errors? Typed error codes, retryable flags, <code>Retry-After</code> headers, suggested alternatives. Not HTML error pages from API endpoints.</p>
+
+<p><strong>Onboarding</strong> — Can a new agent start using your site in minutes? Quick-check summaries, working examples, progressive disclosure from simple to detailed.</p>
+
+<hr>
+
+<h2 id="anti-patterns">Anti-Patterns</h2>
+
+<h3>25 things that break agent experience on the web.</h3>
+
+<p><strong>The Browser-Only Auth Flow.</strong> Auth requires visual browser interaction with no programmatic alternative. Agents can't click buttons.</p>
+
+<p><strong>The Pretty Website, Useless API.</strong> Beautiful landing page, marketing copy everywhere, but the actual API docs are an afterthought.</p>
+
+<p><strong>The "Something Went Wrong" Error.</strong> Generic error message with no error code, no classification, no recovery guidance. Agent is stuck.</p>
+
+<p><strong>The PDF Documentation.</strong> Product docs are a 200-page PDF. Not searchable, not linkable, not parseable.</p>
+
+<p><strong>The Rate Limit Without Retry-After.</strong> Returns 429 but doesn't say when to retry. Agent must guess.</p>
+
+<p><strong>The Silent Mutation.</strong> POST endpoint that sends emails, creates records, or charges money with no mention in the docs.</p>
+
+<p><strong>The Kitchen Sink Endpoint.</strong> One endpoint that does 5 different things depending on which parameters you send.</p>
+
+<p><strong>The 100 Tools With No Categories.</strong> Dumps all capabilities in a flat list with no organization.</p>
+
+<p>And 17 more. <a href="https://github.com/soulsdotzip/axd/blob/main/content/anti-patterns.md">Read the full list →</a></p>
+
+<hr>
+
+<h2 id="scoring">AX Scoring</h2>
+
+<p>Rate any website or web app across 20 metrics. Each scored 0–2. Maximum score: 40.</p>
+
+<div class="levels">
+  <div class="level"><div class="score">0–10</div><div class="label">Not ready</div></div>
+  <div class="level"><div class="score">11–20</div><div class="label">Basic AX</div></div>
+  <div class="level"><div class="score">21–30</div><div class="label">Good AX</div></div>
+  <div class="level"><div class="score">31–40</div><div class="label">Gold</div></div>
+</div>
+
+<p>Metrics include: time-to-first-action, context cost (tokens needed to start), error recovery rate, discovery friction, schema coverage, documentation-to-capability ratio, action classification rate, and model range support. <a href="https://github.com/soulsdotzip/axd/blob/main/content/metrics.md">Full scoring system →</a></p>
+
+<hr>
+
+<h2 id="stack">The AX Stack</h2>
+
+<p>10 layers of agent experience. Each builds on the one below. A governance problem might actually be a schema problem three layers down. Fix from the bottom up.</p>
+
+<ul class="stack-list">
+  <li><span class="layer-num">10</span><span class="layer-name">Governance</span><span class="layer-desc">Policies, audit, safety</span></li>
+  <li><span class="layer-num">9</span><span class="layer-name">Coordination</span><span class="layer-desc">Multi-agent orchestration</span></li>
+  <li><span class="layer-num">8</span><span class="layer-name">Trust</span><span class="layer-desc">Verification, provenance</span></li>
+  <li><span class="layer-num">7</span><span class="layer-name">Memory</span><span class="layer-desc">Persistence, recall</span></li>
+  <li><span class="layer-num">6</span><span class="layer-name">Execution</span><span class="layer-desc">Tool use, actions</span></li>
+  <li><span class="layer-num">5</span><span class="layer-name">Context</span><span class="layer-desc">Environment, identity</span></li>
+  <li><span class="layer-num">4</span><span class="layer-name">Capability</span><span class="layer-desc">Discovery, onboarding</span></li>
+  <li><span class="layer-num">3</span><span class="layer-name">Schema</span><span class="layer-desc">Types, validation</span></li>
+  <li><span class="layer-num">2</span><span class="layer-name">Protocol</span><span class="layer-desc">HTTP, MCP, CLI</span></li>
+  <li><span class="layer-num">1</span><span class="layer-name">Transport</span><span class="layer-desc">Network, auth</span></li>
+</ul>
+
+<hr>
+
+<div class="aside-box">
+  <span class="aside-title">For Agents</span>
+  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, schema.org markup. If you're an agent, read <code>/llms.txt</code> for a machine-readable index of the full standard. Install the <a href="https://github.com/soulsdotzip/axd/blob/main/skill/SKILL.md">AXD audit skill</a> to evaluate any website against these principles.
+</div>
+
+<hr>
+
+<a href="https://github.com/soulsdotzip/axd" class="link-card">
+  <div class="card-title">github.com/soulsdotzip/axd</div>
+  <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, 20 metrics, 10-layer stack. Open source.</div>
+</a>
+
+<a href="https://souls.zip" class="link-card">
+  <div class="card-title">souls.zip</div>
+  <div class="card-desc">Agent marketplace and the reference implementation of AXD principles.</div>
+</a>
+
+</article>
+
+</main>
+
+<footer>
+  <p>© 2026 <a href="https://souls.zip">souls.zip</a> · AXD is an open standard under <a href="https://github.com/soulsdotzip/axd/blob/main/LICENSE">MIT License</a></p>
+</footer>
+
+</body>
+</html>
