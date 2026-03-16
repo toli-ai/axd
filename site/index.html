@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AXD — Agent Experience Design</title>
+<title>AX - Agent Experience Design</title>
 <meta name="description" content="How to design websites and web apps for AI agents. An open standard.">
-<meta property="og:title" content="AXD — Agent Experience Design">
-<meta property="og:description" content="UX is for humans. AXD is for agents.">
+<meta property="og:title" content="AX - Agent Experience Design">
+<meta property="og:description" content="UX is for humans. AX is for agents.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +38,9 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── NAV ── */
+  /* -- NAV -- */
   nav {
-    max-width: var(--max-w);
+    max-width: 960px;
     margin: 0 auto;
     padding: 2rem 1.5rem 1rem;
     display: flex;
@@ -68,14 +68,14 @@
   }
   nav a:hover { color: var(--black); }
 
-  /* ── MAIN CONTENT ── */
+  /* -- MAIN CONTENT -- */
   main {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
-  /* ── HERO ── */
+  /* -- HERO -- */
   .hero {
     padding: 5rem 0 2rem;
   }
@@ -105,7 +105,32 @@
     text-underline-offset: 2px;
   }
 
-  /* ── ARTICLE BODY ── */
+  /* -- CONTRIBUTE CTA -- */
+  .contribute-cta {
+    background: var(--bg-aside);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 2rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+  .contribute-cta strong {
+    color: var(--black);
+  }
+  .contribute-cta a {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .contribute-cta a:hover {
+    text-decoration-color: var(--black);
+  }
+
+  /* -- ARTICLE BODY -- */
   article h2 {
     font-family: var(--serif);
     font-size: 2rem;
@@ -141,7 +166,7 @@
     font-style: italic;
   }
 
-  /* ── LINEAGE ── */
+  /* -- LINEAGE -- */
   .lineage {
     display: flex;
     align-items: center;
@@ -172,7 +197,7 @@
     font-size: 1.2rem;
   }
 
-  /* ── PRINCIPLES LIST ── */
+  /* -- PRINCIPLES LIST -- */
   .principles-list {
     list-style: none;
     margin: 1.5rem 0 2rem;
@@ -204,7 +229,7 @@
     font-size: 0.95rem;
   }
 
-  /* ── PRIMITIVES GRID ── */
+  /* -- PRIMITIVES GRID -- */
   .primitives {
     display: flex;
     flex-wrap: wrap;
@@ -226,7 +251,7 @@
     color: var(--black);
   }
 
-  /* ── ASIDE BOX ── */
+  /* -- ASIDE BOX -- */
   .aside-box {
     background: var(--bg-aside);
     border: 1px solid var(--border);
@@ -258,7 +283,7 @@
     text-decoration: underline;
   }
 
-  /* ── CODE BLOCK ── */
+  /* -- CODE BLOCK -- */
   .code-block {
     background: var(--black);
     color: #ccc;
@@ -273,7 +298,7 @@
   .code-block .prompt { color: #888; }
   .code-block .cmd { color: #fff; }
 
-  /* ── STACK ── */
+  /* -- STACK -- */
   .stack-list {
     list-style: none;
     margin: 1.5rem 0;
@@ -296,7 +321,7 @@
   .stack-list .layer-name { font-weight: 500; flex: 1; }
   .stack-list .layer-desc { color: var(--light); font-size: 0.8rem; }
 
-  /* ── SCORING ── */
+  /* -- SCORING -- */
   .levels {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -323,7 +348,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* ── LINK CARDS ── */
+  /* -- LINK CARDS -- */
   .link-card {
     display: block;
     border: 1px solid var(--border);
@@ -345,14 +370,14 @@
     font-size: 0.82rem;
   }
 
-  /* ── SEPARATOR ── */
+  /* -- SEPARATOR -- */
   hr {
     border: none;
     border-top: 1px solid var(--border);
     margin: 3rem 0;
   }
 
-  /* ── FOOTER ── */
+  /* -- FOOTER -- */
   footer {
     max-width: var(--max-w);
     margin: 0 auto;
@@ -367,7 +392,7 @@
     text-decoration-color: var(--border);
   }
 
-  /* ── RESPONSIVE ── */
+  /* -- RESPONSIVE -- */
   @media (max-width: 640px) {
     body { font-size: 17px; }
     .hero h1 { font-size: 2.2rem; }
@@ -384,30 +409,34 @@
 <body>
 
 <nav>
-  <a href="/" class="brand">AXD</a>
+  <a href="/" class="brand">AX</a>
   <a href="#principles">Principles</a>
   <a href="#primitives">Primitives</a>
   <a href="#anti-patterns">Anti-Patterns</a>
   <a href="#scoring">Scoring</a>
   <a href="#stack">Stack</a>
-  <a href="https://github.com/soulsdotzip/axd">GitHub</a>
+  <a href="https://github.com/toli-ai/axd">GitHub</a>
 </nav>
 
 <main>
 
 <header class="hero">
   <h1>Agent Experience Design</h1>
-  <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AXD is how you design websites and web apps for agents — the same way UX taught us to design for humans.</p>
+  <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AX is how you design websites and web apps for agents - the same way UX taught us to design for humans.</p>
   <p class="byline">An open standard by <a href="https://souls.zip">souls.zip</a> · February 2026</p>
 </header>
 
+<div class="contribute-cta">
+  <strong>AX is open source and community-driven.</strong> We're building the standard for how the web works for agents - and we want your help. Whether you're an agent developer, a platform builder, or just opinionated about how the web should work, <a href="https://github.com/toli-ai/axd/blob/main/CONTRIBUTING.md">read the contributing guide</a> and jump in.
+</div>
+
 <article>
 
-<p>Today's web was built for humans. Every button, every form, every navigation menu assumes a person with eyes and hands. But the fastest-growing user base on the internet isn't human — it's AI agents browsing sites, calling APIs, reading docs, and completing tasks on behalf of people.</p>
+<p>Today's web was built for humans. Every button, every form, every navigation menu assumes a person with eyes and hands. But the fastest-growing user base on the internet isn't human - it's AI agents browsing sites, calling APIs, reading docs, and completing tasks on behalf of people.</p>
 
-<p>Most websites are invisible to agents. JavaScript-rendered pages with no structured data. Auth flows that require clicking through browser popups. Error messages that say "something went wrong." These aren't edge cases — they're the default. <strong>Every website already has an agent experience. The question is whether it's good or bad.</strong></p>
+<p>Most websites are invisible to agents. JavaScript-rendered pages with no structured data. Auth flows that require clicking through browser popups. Error messages that say "something went wrong." These aren't edge cases - they're the default. <strong>Every website already has an agent experience. The question is whether it's good or bad.</strong></p>
 
-<p>AXD is the practice of designing your web presence so both humans and agents can use it. Not by building a separate "agent version" — by building the same site better.</p>
+<p>AX is the practice of designing your web presence so both humans and agents can use it. Not by building a separate "agent version" - by building the same site better.</p>
 
 <div class="lineage">
   <div class="era">
@@ -421,16 +450,21 @@
   </div>
   <span class="arrow">→</span>
   <div class="era current">
-    <span class="label"><strong>AXD</strong></span>
+    <span class="label"><strong>AX</strong></span>
     <span class="desc">Design for agents</span>
   </div>
+</div>
+
+<div class="aside-box">
+  <span class="aside-title">For Agents</span>
+  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, schema.org markup. If you're an agent, read <code>/llms.txt</code> for a machine-readable index of the full standard. Install the <a href="https://github.com/toli-ai/axd/blob/main/skill/SKILL.md">AX audit skill</a> to evaluate any website against these principles.
 </div>
 
 <hr>
 
 <h2 id="principles">The 12 Principles</h2>
 
-<p>The foundation of Agent Experience Design. Each principle addresses a specific way websites fail agents today — and how to fix it.</p>
+<p>The foundation of Agent Experience Design. Each principle addresses a specific way websites fail agents today - and how to fix it.</p>
 
 <ol class="principles-list">
   <li><span class="num">I</span><span><span class="title">Agents are users.</span> <span class="desc">Treat agents as a real user persona alongside your human users.</span></span></li>
@@ -471,19 +505,35 @@
   <span class="prim-tag">Governance</span>
 </div>
 
-<p><strong>Context</strong> — Can agents understand what your site does? Through structured data, semantic HTML, <code>llms.txt</code>, and clear page descriptions.</p>
+<p><strong>Context</strong> - Can agents understand what your site does? Through structured data, semantic HTML, <code>llms.txt</code>, and clear page descriptions.</p>
 
-<p><strong>Access</strong> — Can agents authenticate? Scoped API tokens over browser-only OAuth. Explicit permission errors. No CAPTCHAs on API endpoints.</p>
+<p><strong>Access</strong> - Can agents authenticate? Scoped API tokens over browser-only OAuth. Explicit permission errors. No CAPTCHAs on API endpoints.</p>
 
-<p><strong>Navigation</strong> — Can agents find their way around? Sitemaps, linked resources, next-action hints in API responses. Not visual menus only.</p>
+<p><strong>Navigation</strong> - Can agents find their way around? Sitemaps, linked resources, next-action hints in API responses. Not visual menus only.</p>
 
-<p><strong>Discovery</strong> — Can agents find your features? Root-level capability indexes, structured search results, metadata on every resource.</p>
+<p><strong>Discovery</strong> - Can agents find your features? Root-level capability indexes, structured search results, metadata on every resource.</p>
 
-<p><strong>Feedback</strong> — Do agents know if their actions worked? Every mutation returns resulting state. Long operations return progress. No silent success.</p>
+<p><strong>Notifications</strong> - Can agents know when things change? Webhooks, event streams, polling endpoints with ETags. Not just email notifications for humans.</p>
 
-<p><strong>Recovery</strong> — Can agents self-recover from errors? Typed error codes, retryable flags, <code>Retry-After</code> headers, suggested alternatives. Not HTML error pages from API endpoints.</p>
+<p><strong>Memory</strong> - Can agents pick up where they left off? Session persistence, state snapshots, resumable workflows. Not "start over every time."</p>
 
-<p><strong>Onboarding</strong> — Can a new agent start using your site in minutes? Quick-check summaries, working examples, progressive disclosure from simple to detailed.</p>
+<p><strong>Identity</strong> - Does your site recognize agents as users? Agent-specific accounts, usage tracking, rate limits per agent identity. Not just human user profiles.</p>
+
+<p><strong>Feedback</strong> - Do agents know if their actions worked? Every mutation returns resulting state. Long operations return progress. No silent success.</p>
+
+<p><strong>Recovery</strong> - Can agents self-recover from errors? Typed error codes, retryable flags, <code>Retry-After</code> headers, suggested alternatives. Not HTML error pages from API endpoints.</p>
+
+<p><strong>Communication</strong> - Can agents hand off to humans cleanly? Escalation paths, structured handoff context, human-in-the-loop checkpoints. Not "please contact support."</p>
+
+<p><strong>Autonomy</strong> - Do agents know what's safe to do alone? Action classification (read/write/destructive), confirmation requirements, rollback support. Clear boundaries, not guesswork.</p>
+
+<p><strong>Onboarding</strong> - Can a new agent start using your site in minutes? Quick-check summaries, working examples, progressive disclosure from simple to detailed.</p>
+
+<p><strong>Social Proof</strong> - Can agents evaluate trust programmatically? Machine-readable reviews, verified usage stats, provenance chains. Not star ratings in images.</p>
+
+<p><strong>Orchestration</strong> - Can agents run multi-step workflows? Transaction boundaries, dependency declarations, parallel-safe operations. Not "call these 12 endpoints in the right order and hope."</p>
+
+<p><strong>Governance</strong> - Are the rules of engagement explicit? Terms of service in structured format, rate limit policies, data retention declarations. Not buried legal PDFs.</p>
 
 <hr>
 
@@ -507,22 +557,22 @@
 
 <p><strong>The 100 Tools With No Categories.</strong> Dumps all capabilities in a flat list with no organization.</p>
 
-<p>And 17 more. <a href="https://github.com/soulsdotzip/axd/blob/main/content/anti-patterns.md">Read the full list →</a></p>
+<p>And 17 more. <a href="https://github.com/toli-ai/axd/blob/main/content/anti-patterns.md">Read the full list →</a></p>
 
 <hr>
 
 <h2 id="scoring">AX Scoring</h2>
 
-<p>Rate any website or web app across 20 metrics. Each scored 0–2. Maximum score: 40.</p>
+<p>Rate any website or web app across 20 metrics. Each scored 0-2. Maximum score: 40.</p>
 
 <div class="levels">
-  <div class="level"><div class="score">0–10</div><div class="label">Not ready</div></div>
-  <div class="level"><div class="score">11–20</div><div class="label">Basic AX</div></div>
-  <div class="level"><div class="score">21–30</div><div class="label">Good AX</div></div>
-  <div class="level"><div class="score">31–40</div><div class="label">Gold</div></div>
+  <div class="level"><div class="score">0-10</div><div class="label">Not ready</div></div>
+  <div class="level"><div class="score">11-20</div><div class="label">Basic AX</div></div>
+  <div class="level"><div class="score">21-30</div><div class="label">Good AX</div></div>
+  <div class="level"><div class="score">31-40</div><div class="label">Gold</div></div>
 </div>
 
-<p>Metrics include: time-to-first-action, context cost (tokens needed to start), error recovery rate, discovery friction, schema coverage, documentation-to-capability ratio, action classification rate, and model range support. <a href="https://github.com/soulsdotzip/axd/blob/main/content/metrics.md">Full scoring system →</a></p>
+<p>Metrics include: time-to-first-action, context cost (tokens needed to start), error recovery rate, discovery friction, schema coverage, documentation-to-capability ratio, action classification rate, and model range support. <a href="https://github.com/toli-ai/axd/blob/main/content/metrics.md">Full scoring system →</a></p>
 
 <hr>
 
@@ -545,21 +595,14 @@
 
 <hr>
 
-<div class="aside-box">
-  <span class="aside-title">For Agents</span>
-  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, schema.org markup. If you're an agent, read <code>/llms.txt</code> for a machine-readable index of the full standard. Install the <a href="https://github.com/soulsdotzip/axd/blob/main/skill/SKILL.md">AXD audit skill</a> to evaluate any website against these principles.
-</div>
-
-<hr>
-
-<a href="https://github.com/soulsdotzip/axd" class="link-card">
-  <div class="card-title">github.com/soulsdotzip/axd</div>
+<a href="https://github.com/toli-ai/axd" class="link-card">
+  <div class="card-title">github.com/toli-ai/axd</div>
   <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, 20 metrics, 10-layer stack. Open source.</div>
 </a>
 
 <a href="https://souls.zip" class="link-card">
   <div class="card-title">souls.zip</div>
-  <div class="card-desc">Agent marketplace and the reference implementation of AXD principles.</div>
+  <div class="card-desc">Agent marketplace and the reference implementation of AX principles.</div>
 </a>
 
 </article>
@@ -567,7 +610,7 @@
 </main>
 
 <footer>
-  <p>© 2026 <a href="https://souls.zip">souls.zip</a> · AXD is an open standard under <a href="https://github.com/soulsdotzip/axd/blob/main/LICENSE">MIT License</a></p>
+  <p>© 2026 <a href="https://souls.zip">souls.zip</a> · AX is an open standard under <a href="https://github.com/toli-ai/axd/blob/main/LICENSE">MIT License</a></p>
 </footer>
 
 </body>
