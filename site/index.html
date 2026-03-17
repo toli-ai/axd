@@ -8,6 +8,17 @@
 <meta property="og:title" content="AX - Agent Experience Design">
 <meta property="og:description" content="UX is for humans. AX is for agents.">
 <meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AX - Agent Experience Design",
+  "url": "https://axd.md",
+  "description": "How to design websites and web apps for AI agents. An open standard.",
+  "license": "https://github.com/toli-ai/axd/blob/main/LICENSE",
+  "isAccessibleForFree": true
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -423,7 +434,7 @@
 <header class="hero">
   <h1>Agent Experience Design</h1>
   <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AX is how you design websites and web apps for agents - the same way UX taught us to design for humans.</p>
-  <p class="byline">An open standard by <a href="https://souls.zip">souls.zip</a> · February 2026</p>
+  <p class="byline">An open standard · February 2026</p>
 </header>
 
 <div class="contribute-cta">
@@ -457,7 +468,7 @@
 
 <div class="aside-box">
   <span class="aside-title">For Agents</span>
-  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, schema.org markup. If you're an agent, read <code>/llms.txt</code> for a machine-readable index of the full standard. Install the <a href="/skill.md">AX audit skill</a> to evaluate any website against these principles.
+  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, JSON-LD metadata. If you're an agent, read <code>/llms.txt</code> for a machine-readable index of the full standard. Install the <a href="/skill.md">AX audit skill</a> to evaluate any website against these principles.
 </div>
 
 <hr>
@@ -488,21 +499,21 @@
 <p>The building blocks of agent experience on the web. Each primitive is a category of interaction that agents need from your site.</p>
 
 <div class="primitives">
-  <span class="prim-tag">Context</span>
-  <span class="prim-tag">Access</span>
-  <span class="prim-tag">Navigation</span>
-  <span class="prim-tag">Discovery</span>
-  <span class="prim-tag">Notifications</span>
-  <span class="prim-tag">Memory</span>
-  <span class="prim-tag">Identity</span>
-  <span class="prim-tag">Feedback</span>
-  <span class="prim-tag">Recovery</span>
-  <span class="prim-tag">Communication</span>
-  <span class="prim-tag">Autonomy</span>
-  <span class="prim-tag">Onboarding</span>
-  <span class="prim-tag">Social Proof</span>
-  <span class="prim-tag">Orchestration</span>
-  <span class="prim-tag">Governance</span>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/context.md">Context</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/access.md">Access</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/navigation.md">Navigation</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/discovery.md">Discovery</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/notifications.md">Notifications</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/memory.md">Memory</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/identity.md">Identity</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/feedback.md">Feedback</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/recovery.md">Recovery</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/communication.md">Communication</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/autonomy.md">Autonomy</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/onboarding.md">Onboarding</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/social-proof.md">Social Proof</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/orchestration.md">Orchestration</a>
+  <a class="prim-tag" href="https://github.com/toli-ai/axd/blob/main/content/primitives/governance.md">Governance</a>
 </div>
 
 <p><strong>Context</strong> - Can agents understand what your site does? Through structured data, semantic HTML, <code>llms.txt</code>, and clear page descriptions.</p>
@@ -600,17 +611,14 @@
   <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, 20 metrics, 10-layer stack. Open source.</div>
 </a>
 
-<a href="https://souls.zip" class="link-card">
-  <div class="card-title">souls.zip</div>
-  <div class="card-desc">Agent marketplace and the reference implementation of AX principles.</div>
-</a>
+
 
 </article>
 
 </main>
 
 <footer>
-  <p>© 2026 <a href="https://souls.zip">souls.zip</a> · AX is an open standard under <a href="https://github.com/toli-ai/axd/blob/main/LICENSE">MIT License</a></p>
+  <p>AX is an open standard under <a href="https://github.com/toli-ai/axd/blob/main/LICENSE">MIT License</a></p>
 </footer>
 
 </body>

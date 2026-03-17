@@ -1,31 +1,33 @@
-# AXD — Agent Experience Design
+# AX - Agent Experience Design
 
 How to design websites and web apps for AI agents.
 
-UX is how you design for humans. AXD is how you design for agents.
+UX is how you design for humans. AX is how you design for agents.
+
+**Website:** [axd.md](https://axd.md)
 
 ---
 
-## What is AXD?
+## What is AX?
 
-Agents are the new users. They browse your site, call your API, read your docs, and complete tasks on behalf of humans. Most websites are designed exclusively for human eyes and human hands. AXD is the practice of designing your web presence so agents can use it too.
+Agents are the new users. They browse your site, call your API, read your docs, and complete tasks on behalf of humans. Most websites are designed exclusively for human eyes and human hands. AX is the practice of designing your web presence so agents can use it too.
 
 Every website already has an agent experience. The question is whether it's good or bad.
 
 ## The 12 Principles
 
-1. **[Agents are users](content/principles/01-agents-are-users.md)** — Treat agents as a real user persona alongside your human users.
-2. **[Structure is the interface](content/principles/02-structure-is-the-interface.md)** — Your API responses, HTML structure, and data formats are the agent's UI.
-3. **[Context beats prompting](content/principles/03-context-beats-prompting.md)** — A self-describing site beats clever instructions every time.
-4. **[Open ecosystems win](content/principles/04-open-ecosystems-win.md)** — Let people bring their own agents. Don't lock them into yours.
-5. **[Every action needs feedback](content/principles/05-every-action-needs-feedback.md)** — Agents can't see your success toast. Return structured results.
-6. **[Recovery is mandatory](content/principles/06-recovery-is-mandatory.md)** — Typed errors with retry guidance. Not "something went wrong."
-7. **[Discovery is part of the product](content/principles/07-discovery-is-part-of-the-product.md)** — If agents can't find your capabilities, they don't exist.
-8. **[Auth is experience](content/principles/08-auth-is-experience.md)** — Browser-only OAuth kills agents. Scoped tokens enable them.
-9. **[Memory and events for long work](content/principles/09-memory-and-events.md)** — Agents don't stay on the page. Support async, webhooks, resumability.
-10. **[Trust must be computable](content/principles/10-trust-must-be-computable.md)** — Machine-readable provenance, not marketing badges.
-11. **[Autonomy must be bounded](content/principles/11-autonomy-must-be-bounded.md)** — Label safe vs dangerous actions. Let agents move fast within limits.
-12. **[Accessibility for agents](content/principles/12-accessibility-for-agents.md)** — Design for the range: big models and small, rich context and limited.
+1. **[Agents are users](content/principles/01-agents-are-users.md)** - Treat agents as a real user persona alongside your human users.
+2. **[Structure is the interface](content/principles/02-structure-is-the-interface.md)** - Your API responses, HTML structure, and data formats are the agent's UI.
+3. **[Context beats prompting](content/principles/03-context-beats-prompting.md)** - A self-describing site beats clever instructions every time.
+4. **[Open ecosystems win](content/principles/04-open-ecosystems-win.md)** - Let people bring their own agents. Don't lock them into yours.
+5. **[Every action needs feedback](content/principles/05-every-action-needs-feedback.md)** - Agents can't see your success toast. Return structured results.
+6. **[Recovery is mandatory](content/principles/06-recovery-is-mandatory.md)** - Typed errors with retry guidance. Not "something went wrong."
+7. **[Discovery is part of the product](content/principles/07-discovery-is-part-of-the-product.md)** - If agents can't find your capabilities, they don't exist.
+8. **[Auth is experience](content/principles/08-auth-is-experience.md)** - Browser-only OAuth kills agents. Scoped tokens enable them.
+9. **[Memory and events for long work](content/principles/09-memory-and-events.md)** - Agents don't stay on the page. Support async, webhooks, resumability.
+10. **[Trust must be computable](content/principles/10-trust-must-be-computable.md)** - Machine-readable provenance, not marketing badges.
+11. **[Autonomy must be bounded](content/principles/11-autonomy-must-be-bounded.md)** - Label safe vs dangerous actions. Let agents move fast within limits.
+12. **[Accessibility for agents](content/principles/12-accessibility-for-agents.md)** - Design for the range: big models and small, rich context and limited.
 
 ## The 15 Primitives
 
@@ -63,7 +65,7 @@ Rate any website or web app across 20 metrics on a 0-40 scale. [Full scoring sys
 
 ## For Agents
 
-Install the [AXD audit skill](skill/SKILL.md) to evaluate any website against these principles.
+Install the [AX audit skill](skill/SKILL.md) to evaluate any website against these principles.
 
 ---
 
@@ -79,7 +81,7 @@ ax/
 │   └── stack.md
 ├── skill/             # Installable agent audit skill
 ├── research/          # 35K words of backing research
-└── site/              # Website (separate repo for deployment)
+└── site/              # axd.md website
 ```
 
 ## Contributing
@@ -92,4 +94,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Contributions from both humans and agent
 
 ---
 
-*An open standard by [souls.zip](https://souls.zip).*
+*AX is an open standard. Website: [axd.md](https://axd.md)*

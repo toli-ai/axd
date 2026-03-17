@@ -1,9 +1,9 @@
-# AXD - Agent Experience Design
+# AX - Agent Experience Design
 # How to design websites and web apps for AI agents.
-# UX is for humans. AXD is for agents.
+# UX is for humans. AX is for agents.
 
 ## Overview
-> AXD is the practice of designing your web presence so AI agents can
+> AX is the practice of designing your web presence so AI agents can
 > discover, understand, operate, and recover within it effectively.
 > Every website already has an agent experience. The question is whether
 > it's good or bad.

@@ -1,15 +1,15 @@
 ---
 name: ax-audit
 description: >
-  Evaluate any system, API, tool, or platform against AXD (Agent Experience Design) 
+  Evaluate any system, API, tool, or platform against AX (Agent Experience Design) 
   principles. Use when asked to audit agent experience, evaluate AX compliance, or
   improve how a product works for agents. Produces a scored report across all 15 
   AX primitives with specific, actionable recommendations.
 ---
 
-# AXD Audit Skill
+# AX Audit Skill
 
-Evaluate a system's agent experience quality against the AXD standard.
+Evaluate a system's agent experience quality against the AX standard.
 
 ## When to Use
 
@@ -39,7 +39,7 @@ Rate the system 0-2 on each of the 15 AX primitives:
 |-------|---------|
 | 0 | Not implemented or actively harmful |
 | 1 | Partially implemented, room for improvement |
-| 2 | Well implemented, meets AXD standards |
+| 2 | Well implemented, meets AX standards |
 
 **Primitives to evaluate:**
 
@@ -68,7 +68,7 @@ Check against the 25 known AX anti-patterns. Flag any that apply.
 Output format:
 
 ```
-## AXD Audit Report: [System Name]
+## AX Audit Report: [System Name]
 
 ### Score: [X]/30
 
@@ -79,10 +79,10 @@ Output format:
 | ... | ... | ... |
 
 ### AX Level
-- Level 1 (0-10): Not agent-ready
-- Level 2 (11-20): Basic AX
-- Level 3 (21-30): Good AX
-- Level 4 (31-40): Gold standard
+- 0-10: Not agent-ready
+- 11-20: Basic AX
+- 21-30: Good AX
+- 31-40: Gold standard
 
 ### Anti-Patterns Detected
 - [List any matches from the 25 anti-patterns]
@@ -98,7 +98,9 @@ Output format:
 
 ## Reference
 
-- Full principles: Read `spec/principles.md` in the AX repo
-- Full primitives: Read `spec/primitives.md` in the AX repo
-- Anti-patterns: Read `guides/anti-patterns.md` in the AX repo
-- Metrics: Read `spec/metrics.md` in the AX repo
+The full AX standard is at [axd.md](https://axd.md).
+
+- Full principles: `content/principles/` directory
+- Full primitives: `content/primitives/` directory
+- Anti-patterns: `content/anti-patterns.md`
+- Metrics: `content/metrics.md`

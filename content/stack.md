@@ -1,4 +1,4 @@
-# The AXD Stack
+# The AX Stack
 
 A layered architecture for agent experience, analogous to the OSI model for networking or the web platform stack.
 
@@ -55,7 +55,7 @@ The AX Stack defines 10 layers, each building on the one below. Good AX requires
 
 ### Layer 4: Capability
 **Handles:** What the system can do. Discovery, onboarding, capability metadata.
-**Standards:** AXD format, llms.txt, tool descriptions, capability manifests.
+**Standards:** AX format, llms.txt, tool descriptions, capability manifests.
 **AX concern:** Can the agent FIND and UNDERSTAND what's available?
 
 ### Layer 5: Context

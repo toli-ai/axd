@@ -1,4 +1,4 @@
-# AXD Metrics
+# AX Metrics
 
 How to measure agent experience quality. 20 concrete, measurable metrics.
 
@@ -134,8 +134,7 @@ Rate a system across all 20 metrics. Assign each a score of 0-2:
 | Level 0 | 0-10 | Not agent-ready |
 | Level 1 | 11-20 | Basic AX |
 | Level 2 | 21-30 | Good AX |
-| Level 3 | 31-36 | Excellent AX |
-| Level 4 | 37-40 | Gold standard |
+| Level 3 | 31-40 | Gold standard |
 
 ---
 

@@ -79,10 +79,10 @@ Output format:
 | ... | ... | ... |
 
 ### AX Level
-- Level 1 (0-10): Not agent-ready
-- Level 2 (11-20): Basic AX
-- Level 3 (21-30): Good AX
-- Level 4 (31-40): Gold standard
+- 0-10: Not agent-ready
+- 11-20: Basic AX
+- 21-30: Good AX
+- 31-40: Gold standard
 
 ### Anti-Patterns Detected
 - [List any matches from the 25 anti-patterns]
@@ -98,7 +98,9 @@ Output format:
 
 ## Reference
 
-- Full principles: Read `spec/principles.md` in the AX repo
-- Full primitives: Read `spec/primitives.md` in the AX repo
-- Anti-patterns: Read `guides/anti-patterns.md` in the AX repo
-- Metrics: Read `spec/metrics.md` in the AX repo
+The full AX standard is at [axd.md](https://axd.md).
+
+- Full principles: `content/principles/` directory
+- Full primitives: `content/primitives/` directory
+- Anti-patterns: `content/anti-patterns.md`
+- Metrics: `content/metrics.md`
