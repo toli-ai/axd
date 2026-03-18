@@ -79,10 +79,10 @@ Output format:
 | ... | ... | ... |
 
 ### AX Level
-- 0-10: Not agent-ready
-- 11-20: Basic AX
-- 21-30: Good AX
-- 31-40: Gold standard
+- 0-7: Not agent-ready
+- 8-15: Basic AX
+- 16-23: Good AX
+- 24-30: Gold standard
 
 ### Anti-Patterns Detected
 - [List any matches from the 25 anti-patterns]

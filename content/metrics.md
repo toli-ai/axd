@@ -1,8 +1,8 @@
 # AX Metrics
 
-How to measure agent experience quality. 20 concrete, measurable metrics.
+How to measure agent experience quality. Detailed metrics organized by the 15 AX primitives.
 
-**Status:** Draft v0.1
+**Status:** Draft v0.2
 
 ---
 
@@ -120,21 +120,24 @@ Does the system work with agents running on smaller models (not just frontier)?
 
 ## Using These Metrics
 
-### AX Scorecard
+### AX Score
 
-Rate a system across all 20 metrics. Assign each a score of 0-2:
-- **0:** Not implemented
-- **1:** Partially implemented
-- **2:** Fully implemented
+The AX Score is based on the **15 AX primitives**, each scored 0-2. Maximum score: **30**.
 
-**Maximum score:** 40
+| Score | Meaning |
+|-------|---------|
+| 0 | Not implemented or actively harmful |
+| 1 | Partially implemented, room for improvement |
+| 2 | Well implemented, meets AX standards |
 
 | Level | Score | Label |
 |-------|-------|-------|
-| Level 0 | 0-10 | Not agent-ready |
-| Level 1 | 11-20 | Basic AX |
-| Level 2 | 21-30 | Good AX |
-| Level 3 | 31-40 | Gold standard |
+| Level 0 | 0-7 | Not agent-ready |
+| Level 1 | 8-15 | Basic AX |
+| Level 2 | 16-23 | Good AX |
+| Level 3 | 24-30 | Gold standard |
+
+The detailed metrics above serve as measurement guidance for each primitive. When scoring, evaluate each primitive holistically using its relevant metrics, then assign a single 0-2 score per primitive.
 
 ---
 

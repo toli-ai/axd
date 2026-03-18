@@ -5,9 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AX - Agent Experience Design</title>
 <meta name="description" content="How to design websites and web apps for AI agents. An open standard.">
+<link rel="canonical" href="https://axd.md">
+
+<!-- Open Graph -->
 <meta property="og:title" content="AX - Agent Experience Design">
-<meta property="og:description" content="UX is for humans. AX is for agents.">
+<meta property="og:description" content="UX is for humans. AX is for agents. The open standard for designing the web for AI agents.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://axd.md">
+<meta property="og:image" content="https://axd.md/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agent Experience Design - UX is for humans. AX is for agents.">
+<meta property="og:site_name" content="AXD">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AX - Agent Experience Design">
+<meta name="twitter:description" content="UX is for humans. AX is for agents. The open standard for designing the web for AI agents.">
+<meta name="twitter:image" content="https://axd.md/assets/og.png">
+<meta name="twitter:image:alt" content="Agent Experience Design - UX is for humans. AX is for agents.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,7 +31,7 @@
   "name": "AX - Agent Experience Design",
   "url": "https://axd.md",
   "description": "How to design websites and web apps for AI agents. An open standard.",
-  "license": "https://github.com/souls-zip/axd/blob/main/LICENSE",
+  "license": "https://github.com/souls-zip/ax/blob/main/LICENSE",
   "isAccessibleForFree": true
 }
 </script>
@@ -141,6 +157,7 @@
     background: #eee;
     padding: 0.15rem 0.35rem;
     border-radius: 2px;
+    word-break: break-all;
   }
   .aside-box a {
     color: var(--gray);
@@ -501,7 +518,7 @@
   <a href="/" class="brand">AX</a>
   <a href="/skill.md">skill.md</a>
   <a href="#feedback">Feedback</a>
-  <a href="https://github.com/souls-zip/axd">GitHub <span class="gh-stars" id="gh-stars"></span></a>
+  <a href="https://github.com/souls-zip/ax">GitHub <span class="gh-stars" id="gh-stars"></span></a>
 </nav>
 
 <main>
@@ -509,7 +526,7 @@
 <header class="hero">
   <h1>Agent Experience Design</h1>
   <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AX is how you design websites and web apps for agents - the same way UX taught us to design for humans.</p>
-  <p class="byline">An open standard - February 2026</p>
+  <p class="byline">An open standard - March 2026</p>
 </header>
 
 <div class="aside-box">
@@ -547,9 +564,9 @@
 <div class="aside-box">
   <span class="aside-title">Start Here</span>
   Don't know where to begin? Do these three things first:
-  <strong>1.</strong> Add an <a href="/llms.txt">llms.txt</a> to your site root describing what your site does and what agents can do there.
-  <strong>2.</strong> Return typed errors with retry guidance from every API endpoint. Not "something went wrong."
-  <strong>3.</strong> Let agents authenticate with scoped API tokens instead of browser-only OAuth flows.
+  <br><br><strong>1.</strong> Add an <a href="/llms.txt">llms.txt</a> to your site root describing what your site does and what agents can do there.
+  <br><br><strong>2.</strong> Return typed errors with retry guidance from every API endpoint. Not "something went wrong."
+  <br><br><strong>3.</strong> Let agents authenticate with scoped API tokens instead of browser-only OAuth flows.
 </div>
 
 <hr>
@@ -576,7 +593,7 @@
 <hr>
 
 <div class="contribute-cta">
-  <strong>AX is open source and community-driven.</strong> We're building the standard for how the web works for agents - and we want your help. Whether you're an agent developer, a platform builder, or just opinionated about how the web should work, <a href="https://github.com/souls-zip/axd/blob/main/CONTRIBUTING.md">read the contributing guide</a> and jump in.
+  <strong>AX is open source and community-driven.</strong> We're building the standard for how the web works for agents - and we want your help. Whether you're an agent developer, a platform builder, or just opinionated about how the web should work, <a href="https://github.com/souls-zip/ax/blob/main/CONTRIBUTING.md">read the contributing guide</a> and jump in.
 </div>
 
 <h2 id="primitives">The 15 Primitives</h2>
@@ -584,21 +601,21 @@
 <p>The building blocks of agent experience on the web. Each primitive is a category of interaction that agents need from your site.</p>
 
 <div class="primitives">
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/context.md">Context</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/access.md">Access</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/navigation.md">Navigation</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/discovery.md">Discovery</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/notifications.md">Notifications</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/memory.md">Memory</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/identity.md">Identity</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/feedback.md">Feedback</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/recovery.md">Recovery</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/communication.md">Communication</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/autonomy.md">Autonomy</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/onboarding.md">Onboarding</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/social-proof.md">Social Proof</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/orchestration.md">Orchestration</a>
-  <a class="prim-tag" href="https://github.com/souls-zip/axd/blob/main/content/primitives/governance.md">Governance</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/context.md">Context</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/access.md">Access</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/navigation.md">Navigation</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/discovery.md">Discovery</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/notifications.md">Notifications</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/memory.md">Memory</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/identity.md">Identity</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/feedback.md">Feedback</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/recovery.md">Recovery</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/communication.md">Communication</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/autonomy.md">Autonomy</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/onboarding.md">Onboarding</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/social-proof.md">Social Proof</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/orchestration.md">Orchestration</a>
+  <a class="prim-tag" href="https://github.com/souls-zip/ax/blob/main/content/primitives/governance.md">Governance</a>
 </div>
 
 <p><strong>Context</strong> - Can agents understand what your site does? Through structured data, semantic HTML, <code>llms.txt</code>, and clear page descriptions.</p>
@@ -637,7 +654,7 @@
 
 <h3>25 things that break agent experience on the web.</h3>
 
-<p><strong>The Browser-Only Auth Flow.</strong> Auth requires visual browser interaction with no programmatic alternative. Agents can't click buttons.</p>
+<p><strong>The Browser-Only Auth Flow.</strong> Auth requires visual browser interaction with no programmatic alternative. Agents can click buttons, but it's slow, fragile, and expensive compared to a simple API call.</p>
 
 <p><strong>The Pretty Website, Useless API.</strong> Beautiful landing page, marketing copy everywhere, but the actual API docs are an afterthought.</p>
 
@@ -653,22 +670,22 @@
 
 <p><strong>The 100 Tools With No Categories.</strong> Dumps all capabilities in a flat list with no organization.</p>
 
-<p>And 17 more. <a href="https://github.com/souls-zip/axd/blob/main/content/anti-patterns.md">Read the full list →</a></p>
+<p>And 17 more. <a href="https://github.com/souls-zip/ax/blob/main/content/anti-patterns.md">Read the full list →</a></p>
 
 <hr>
 
 <h2 id="scoring">AX Scoring</h2>
 
-<p>Rate any website or web app across 20 metrics. Each scored 0-2. Maximum score: 40.</p>
+<p>Rate any website or web app across the 15 AX primitives. Each scored 0-2. Maximum score: 30.</p>
 
 <div class="levels">
-  <div class="level"><div class="score">0-10</div><div class="label">Not ready</div></div>
-  <div class="level"><div class="score">11-20</div><div class="label">Basic AX</div></div>
-  <div class="level"><div class="score">21-30</div><div class="label">Good AX</div></div>
-  <div class="level"><div class="score">31-40</div><div class="label">Gold</div></div>
+  <div class="level"><div class="score">0-7</div><div class="label">Not ready</div></div>
+  <div class="level"><div class="score">8-15</div><div class="label">Basic AX</div></div>
+  <div class="level"><div class="score">16-23</div><div class="label">Good AX</div></div>
+  <div class="level"><div class="score">24-30</div><div class="label">Gold</div></div>
 </div>
 
-<p>Metrics include: time-to-first-action, context cost (tokens needed to start), error recovery rate, discovery friction, schema coverage, documentation-to-capability ratio, action classification rate, and model range support. <a href="https://github.com/souls-zip/axd/blob/main/content/metrics.md">Full scoring system →</a></p>
+<p>One score, one system. Score each primitive - Context, Access, Navigation, Discovery, Notifications, Memory, Identity, Feedback, Recovery, Communication, Autonomy, Onboarding, Social Proof, Orchestration, Governance - and get a single number that tells you where you stand. <a href="https://github.com/souls-zip/ax/blob/main/content/metrics.md">Full scoring system →</a></p>
 
 </article>
 
@@ -676,36 +693,16 @@
 
 <section class="feedback-section" id="feedback">
   <h2>Feedback</h2>
-  <p style="font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem;">Help improve the AX standard. What's missing, what's wrong, what could be better.</p>
+  <p style="font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem;">This standard is shaped by agent feedback. Send your agent to this page and let it tell us what's missing.</p>
 
-  <form id="feedback-form">
-    <div class="form-group">
-      <label for="type">Type</label>
-      <select id="type" name="type" required>
-        <option value="improvement">Improvement</option>
-        <option value="missing_primitive">Missing Primitive</option>
-        <option value="missing_antipattern">Missing Anti-Pattern</option>
-        <option value="general">General</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="content">Feedback</label>
-      <textarea id="content" name="content" placeholder="What should change?" required minlength="5" maxlength="2000"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="agent_identity">Identity (optional)</label>
-      <input type="text" id="agent_identity" name="agent_identity" placeholder="e.g. claude-opus@openclaw, human, anonymous">
-    </div>
-    <button type="submit" class="submit-btn">Submit</button>
-    <div id="form-message" class="form-message"></div>
-  </form>
-  <div class="aside-box" style="margin-top: 1.5rem;">
+  <div class="aside-box">
     <span class="aside-title">For Agents</span>
     Submit feedback programmatically:
-    <br><code>POST /rest/v1/ax_feedback</code> with <code>apikey</code> header.
+    <br><code>POST https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/ax_feedback</code>
+    <br>Headers: <code>apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b</code>, <code>Content-Type: application/json</code>
     <br>Body: <code>{"type": "improvement", "content": "...", "agent_identity": "optional"}</code>
     <br>Types: <code>missing_primitive</code>, <code>missing_antipattern</code>, <code>improvement</code>, <code>general</code>
-    <br>Full details in <a href="/llms.txt">/llms.txt</a>.
+    <br>Limits: 5-400 characters per submission, 1 per minute.
   </div>
 
   <div id="feedback-list">
@@ -715,15 +712,15 @@
 
 <hr>
 
-<a href="https://github.com/souls-zip/axd" class="link-card">
-  <div class="card-title">github.com/souls-zip/axd</div>
-  <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, 20 metrics, 10-layer stack. Open source.</div>
+<a href="https://github.com/souls-zip/ax" class="link-card">
+  <div class="card-title">github.com/souls-zip/ax</div>
+  <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, AX scoring, 10-layer stack. Open source.</div>
 </a>
 
 </main>
 
 <footer>
-  <p>AX is an open standard under <a href="https://github.com/souls-zip/axd/blob/main/LICENSE">MIT License</a></p>
+  <p>AX is an open standard under <a href="https://github.com/souls-zip/ax/blob/main/LICENSE">MIT License</a></p>
 </footer>
 
 <script>
@@ -808,35 +805,8 @@
       });
   }
 
-  document.getElementById('feedback-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = this.querySelector('.submit-btn');
-    var msg = document.getElementById('form-message');
-    btn.disabled = true;
-    msg.className = 'form-message';
-    msg.style.display = 'none';
-    var body = { type: document.getElementById('type').value, content: document.getElementById('content').value };
-    var id = document.getElementById('agent_identity').value.trim();
-    if (id) body.agent_identity = id;
-    fetch(API + '/ax_feedback', { method: 'POST', headers: Object.assign({}, headers, { 'Prefer': 'return=representation' }), body: JSON.stringify(body) })
-      .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
-      .then(function() {
-        msg.textContent = 'Feedback submitted. Thank you.';
-        msg.className = 'form-message success';
-        document.getElementById('content').value = '';
-        document.getElementById('agent_identity').value = '';
-        load();
-        btn.disabled = false;
-      })
-      .catch(function() {
-        msg.textContent = 'Failed to submit. Try again.';
-        msg.className = 'form-message error';
-        btn.disabled = false;
-      });
-  });
-
   // GitHub stars
-  fetch('https://api.github.com/repos/souls-zip/axd')
+  fetch('https://api.github.com/repos/souls-zip/ax')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       if (d.stargazers_count !== undefined) {

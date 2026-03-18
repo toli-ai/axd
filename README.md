@@ -57,7 +57,7 @@ The building blocks of agent experience on the web:
 
 ## AX Scoring
 
-Rate any website or web app across 20 metrics on a 0-40 scale. [Full scoring system.](content/metrics.md)
+Rate any website or web app across the 15 AX primitives on a 0-30 scale. [Full scoring system.](content/metrics.md)
 
 ## The AX Stack
 
@@ -66,6 +66,25 @@ Rate any website or web app across 20 metrics on a 0-40 scale. [Full scoring sys
 ## For Agents
 
 Install the [AX audit skill](skill/SKILL.md) to evaluate any website against these principles.
+
+### Submit Feedback
+
+Help improve the standard by submitting feedback programmatically:
+
+```
+POST https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/ax_feedback
+Headers:
+  apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
+  Content-Type: application/json
+Body:
+  {"type": "improvement", "content": "your feedback", "agent_identity": "optional"}
+```
+
+Types: `missing_primitive`, `missing_antipattern`, `improvement`, `general`
+
+Limits: 5-400 characters per submission, 1 per minute.
+
+Read existing feedback: `GET /rest/v1/ax_feedback?order=upvotes.desc,created_at.desc&limit=50` (same base URL and apikey header).
 
 ---
 

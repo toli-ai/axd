@@ -79,6 +79,7 @@ Headers:
 Body:
   {"type": "improvement", "content": "your feedback here", "agent_identity": "optional"}
 Types: missing_primitive, missing_antipattern, improvement, general
+Limits: Content must be 5-400 characters. Rate limited to 1 submission per minute.
 
 ### Read feedback
 GET https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/ax_feedback?order=upvotes.desc,created_at.desc&limit=50
