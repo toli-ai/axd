@@ -35,7 +35,6 @@
     --border: #e0e0e0;
     --bg: #fff;
     --bg-aside: #f8f8f8;
-    --accent: #111;
     --max-w: 680px;
   }
 
@@ -78,6 +77,12 @@
     transition: color 0.2s;
   }
   nav a:hover { color: var(--black); }
+  .gh-stars {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    color: var(--light);
+    margin-left: 0.2rem;
+  }
 
   /* -- MAIN CONTENT -- */
   main {
@@ -109,158 +114,6 @@
     font-size: 0.85rem;
     color: var(--light);
   }
-  .hero .byline a {
-    color: var(--light);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 2px;
-  }
-
-  /* -- CONTRIBUTE CTA -- */
-  .contribute-cta {
-    background: var(--bg-aside);
-    border: 1px solid var(--border);
-    padding: 1.25rem 1.5rem;
-    margin: 0 0 2rem;
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--gray);
-  }
-  .contribute-cta strong {
-    color: var(--black);
-  }
-  .contribute-cta a {
-    color: var(--black);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 2px;
-    transition: text-decoration-color 0.2s;
-  }
-  .contribute-cta a:hover {
-    text-decoration-color: var(--black);
-  }
-
-  /* -- ARTICLE BODY -- */
-  article h2 {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 3.5rem 0 1rem;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-  }
-  article h3 {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin: 2.5rem 0 0.75rem;
-    line-height: 1.35;
-  }
-  article p {
-    margin-bottom: 1.25rem;
-  }
-  article strong {
-    font-weight: 600;
-  }
-  article a {
-    color: var(--black);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 3px;
-    transition: text-decoration-color 0.2s;
-  }
-  article a:hover {
-    text-decoration-color: var(--black);
-  }
-  article em {
-    font-style: italic;
-  }
-
-  /* -- LINEAGE -- */
-  .lineage {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin: 2rem 0 3rem;
-    font-family: var(--sans);
-    font-size: 0.95rem;
-  }
-  .lineage .era {
-    text-align: center;
-  }
-  .lineage .era .label {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-  }
-  .lineage .era .desc {
-    font-size: 0.75rem;
-    color: var(--light);
-    display: block;
-    margin-top: 0.1rem;
-  }
-  .lineage .era.current .label {
-    font-size: 1.3rem;
-  }
-  .lineage .arrow {
-    color: var(--border);
-    font-size: 1.2rem;
-  }
-
-  /* -- PRINCIPLES LIST -- */
-  .principles-list {
-    list-style: none;
-    margin: 1.5rem 0 2rem;
-    padding: 0;
-  }
-  .principles-list li {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
-  }
-  .principles-list li:first-child {
-    border-top: 1px solid var(--border);
-  }
-  .principles-list .num {
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--light);
-    min-width: 1.5rem;
-    flex-shrink: 0;
-  }
-  .principles-list .title {
-    font-weight: 600;
-  }
-  .principles-list .desc {
-    color: var(--gray);
-    font-size: 0.95rem;
-  }
-
-  /* -- PRIMITIVES GRID -- */
-  .primitives {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1.5rem 0 2rem;
-  }
-  .prim-tag {
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    color: var(--gray);
-    border: 1px solid var(--border);
-    padding: 0.35rem 0.75rem;
-    border-radius: 3px;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  .prim-tag:hover {
-    border-color: var(--black);
-    color: var(--black);
-  }
 
   /* -- ASIDE BOX -- */
   .aside-box {
@@ -284,7 +137,7 @@
   }
   .aside-box code {
     font-family: var(--mono);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     background: #eee;
     padding: 0.15rem 0.35rem;
     border-radius: 2px;
@@ -294,43 +147,130 @@
     text-decoration: underline;
   }
 
-  /* -- CODE BLOCK -- */
-  .code-block {
-    background: var(--black);
-    color: #ccc;
-    font-family: var(--mono);
-    font-size: 0.82rem;
+  /* -- CONTRIBUTE CTA -- */
+  .contribute-cta {
+    background: var(--bg-aside);
+    border: 1px solid var(--border);
     padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-    line-height: 1.6;
-    border-radius: 2px;
-  }
-  .code-block .prompt { color: #888; }
-  .code-block .cmd { color: #fff; }
-
-  /* -- STACK -- */
-  .stack-list {
-    list-style: none;
-    margin: 1.5rem 0;
-    padding: 0;
+    margin: 0 0 2rem;
     font-family: var(--sans);
     font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--gray);
   }
-  .stack-list li {
+  .contribute-cta strong { color: var(--black); }
+  .contribute-cta a {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .contribute-cta a:hover { text-decoration-color: var(--black); }
+
+  /* -- ARTICLE BODY -- */
+  article h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3.5rem 0 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  article h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 2.5rem 0 0.75rem;
+    line-height: 1.35;
+  }
+  article p { margin-bottom: 1.25rem; }
+  article strong { font-weight: 600; }
+  article a {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+  article a:hover { text-decoration-color: var(--black); }
+  article em { font-style: italic; }
+  article code {
+    font-family: var(--mono);
+    font-size: 0.78em;
+    background: #eee;
+    padding: 0.15rem 0.35rem;
+    border-radius: 2px;
+  }
+
+  /* -- LINEAGE -- */
+  .lineage {
     display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--border);
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 2rem 0 3rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
   }
-  .stack-list li:first-child { border-top: 1px solid var(--border); }
-  .stack-list .layer-num {
-    color: var(--light);
+  .lineage .era { text-align: center; }
+  .lineage .era .label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+  }
+  .lineage .era .desc {
     font-size: 0.75rem;
-    min-width: 2rem;
+    color: var(--light);
+    display: block;
+    margin-top: 0.1rem;
   }
-  .stack-list .layer-name { font-weight: 500; flex: 1; }
-  .stack-list .layer-desc { color: var(--light); font-size: 0.8rem; }
+  .lineage .era.current .label { font-size: 1.3rem; }
+  .lineage .arrow { color: var(--border); font-size: 1.2rem; }
+
+  /* -- PRINCIPLES LIST -- */
+  .principles-list {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+  .principles-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .principles-list li:first-child { border-top: 1px solid var(--border); }
+  .principles-list .num {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--light);
+    min-width: 1.5rem;
+    flex-shrink: 0;
+  }
+  .principles-list .title { font-weight: 600; }
+  .principles-list .desc { color: var(--gray); font-size: 0.95rem; }
+
+  /* -- PRIMITIVES GRID -- */
+  .primitives {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .prim-tag {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .prim-tag:hover { border-color: var(--black); color: var(--black); }
 
   /* -- SCORING -- */
   .levels {
@@ -372,14 +312,150 @@
     transition: border-color 0.2s;
   }
   .link-card:hover { border-color: var(--black); }
-  .link-card .card-title {
+  .link-card .card-title { font-weight: 600; margin-bottom: 0.2rem; }
+  .link-card .card-desc { color: var(--gray); font-size: 0.82rem; }
+
+  /* -- FEEDBACK SECTION -- */
+  .feedback-section { margin: 2rem 0; }
+  .feedback-section h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin: 3.5rem 0 1rem;
+    line-height: 1.25;
   }
-  .link-card .card-desc {
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
     color: var(--gray);
-    font-size: 0.82rem;
+    margin-bottom: 0.35rem;
   }
+  .form-group select,
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--bg);
+    color: var(--black);
+    transition: border-color 0.2s;
+  }
+  .form-group select:focus,
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--black);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .submit-btn {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    background: var(--black);
+    color: #fff;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .submit-btn:hover { background: #333; }
+  .submit-btn:disabled { background: var(--light); border-color: var(--light); cursor: not-allowed; }
+  .form-message {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    display: none;
+  }
+  .form-message.success { color: #2a7d2a; display: block; }
+  .form-message.error { color: #c33; display: block; }
+
+  .feedback-list {
+    margin: 1.5rem 0;
+    max-height: 520px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+  }
+  .feedback-item {
+    padding: 0.85rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+  .feedback-item:last-child { border-bottom: none; }
+  .vote-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2.25rem;
+    flex-shrink: 0;
+  }
+  .vote-btn {
+    background: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 0.15rem 0.4rem;
+    font-size: 0.7rem;
+    color: var(--light);
+    border-radius: 2px;
+    transition: all 0.2s;
+    font-family: var(--sans);
+  }
+  .vote-btn:hover { border-color: var(--black); color: var(--black); }
+  .vote-btn.voted { background: var(--black); color: #fff; border-color: var(--black); }
+  .vote-count {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+  }
+  .feedback-body { flex: 1; }
+  .feedback-meta {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--light);
+    margin-bottom: 0.25rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .type-badge {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+  .feedback-content {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--gray);
+  }
+  .feedback-empty, .feedback-loading {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--light);
+    padding: 2rem;
+    text-align: center;
+  }
+  .api-hint {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--light);
+    margin-top: 0.75rem;
+  }
+  .api-hint a { color: var(--light); text-decoration: underline; }
 
   /* -- SEPARATOR -- */
   hr {
@@ -408,12 +484,14 @@
     body { font-size: 17px; }
     .hero h1 { font-size: 2.2rem; }
     .hero { padding: 3rem 0 1.5rem; }
-    article h2 { font-size: 1.6rem; }
+    article h2, .feedback-section h2 { font-size: 1.6rem; }
     .lineage { gap: 0.75rem; }
     .lineage .era .label { font-size: 0.95rem; }
     .lineage .era.current .label { font-size: 1.1rem; }
     .levels { grid-template-columns: repeat(2, 1fr); }
     nav { gap: 0.4rem 1rem; }
+    .feedback-item { flex-direction: column; gap: 0.4rem; }
+    .vote-col { flex-direction: row; gap: 0.5rem; }
   }
 </style>
 </head>
@@ -422,12 +500,9 @@
 <nav>
   <a href="/" class="brand">AX</a>
   <a href="#principles">Principles</a>
-  <a href="#primitives">Primitives</a>
-  <a href="#anti-patterns">Anti-Patterns</a>
-  <a href="#scoring">Scoring</a>
-  <a href="#stack">Stack</a>
-  <a href="/feedback.html">Feedback</a>
-  <a href="https://github.com/toli-ai/axd">GitHub</a>
+  <a href="/skill.md">skill.md</a>
+  <a href="#feedback">Feedback</a>
+  <a href="https://github.com/toli-ai/axd">GitHub <span class="gh-stars" id="gh-stars"></span></a>
 </nav>
 
 <main>
@@ -435,19 +510,14 @@
 <header class="hero">
   <h1>Agent Experience Design</h1>
   <p class="subtitle">As AI agents become the primary users of the web, a new design discipline is born. AX is how you design websites and web apps for agents - the same way UX taught us to design for humans.</p>
-  <p class="byline">An open standard · February 2026</p>
+  <p class="byline">An open standard - February 2026</p>
 </header>
 
-<div class="contribute-cta">
-  <strong>AX is open source and community-driven.</strong> We're building the standard for how the web works for agents - and we want your help. Whether you're an agent developer, a platform builder, or just opinionated about how the web should work, <a href="https://github.com/toli-ai/axd/blob/main/CONTRIBUTING.md">read the contributing guide</a> and jump in. Have feedback? <a href="/feedback.html">Submit it here</a>.
-</div>
-
 <div class="aside-box">
-  <span class="aside-title">Start Here</span>
-  Don't know where to begin? Do these three things first:
-  <strong>1.</strong> Add an <a href="/llms.txt">llms.txt</a> to your site root describing what your site does and what agents can do there.
-  <strong>2.</strong> Return typed errors with retry guidance from every API endpoint. Not "something went wrong."
-  <strong>3.</strong> Let agents authenticate with scoped API tokens instead of browser-only OAuth flows.
+  <span class="aside-title">For Agents</span>
+  <strong><a href="/llms.txt">Read /llms.txt</a></strong> for a machine-readable index of the full standard.
+  Install the <a href="/skill.md">AX audit skill</a> to evaluate any website against these principles.
+  <a href="#feedback">Submit feedback</a> on the standard itself.
 </div>
 
 <article>
@@ -476,8 +546,11 @@
 </div>
 
 <div class="aside-box">
-  <span class="aside-title">For Agents</span>
-  This site practices what it preaches. Semantic HTML, no JavaScript required, structured headings, JSON-LD metadata. <strong><a href="/llms.txt">Read /llms.txt</a></strong> for a machine-readable index of the full standard. Install the <a href="/skill.md">AX audit skill</a> to evaluate any website against these principles. <a href="/feedback.html">Submit feedback</a> on the standard itself.
+  <span class="aside-title">Start Here</span>
+  Don't know where to begin? Do these three things first:
+  <strong>1.</strong> Add an <a href="/llms.txt">llms.txt</a> to your site root describing what your site does and what agents can do there.
+  <strong>2.</strong> Return typed errors with retry guidance from every API endpoint. Not "something went wrong."
+  <strong>3.</strong> Let agents authenticate with scoped API tokens instead of browser-only OAuth flows.
 </div>
 
 <hr>
@@ -502,6 +575,10 @@
 </ol>
 
 <hr>
+
+<div class="contribute-cta">
+  <strong>AX is open source and community-driven.</strong> We're building the standard for how the web works for agents - and we want your help. Whether you're an agent developer, a platform builder, or just opinionated about how the web should work, <a href="https://github.com/toli-ai/axd/blob/main/CONTRIBUTING.md">read the contributing guide</a> and jump in.
+</div>
 
 <h2 id="primitives">The 15 Primitives</h2>
 
@@ -594,24 +671,41 @@
 
 <p>Metrics include: time-to-first-action, context cost (tokens needed to start), error recovery rate, discovery friction, schema coverage, documentation-to-capability ratio, action classification rate, and model range support. <a href="https://github.com/toli-ai/axd/blob/main/content/metrics.md">Full scoring system →</a></p>
 
+</article>
+
 <hr>
 
-<h2 id="stack">The AX Stack</h2>
+<section class="feedback-section" id="feedback">
+  <h2>Feedback</h2>
+  <p style="font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem;">Help improve the AX standard. What's missing, what's wrong, what could be better.</p>
 
-<p>10 layers of agent experience. Each builds on the one below. A governance problem might actually be a schema problem three layers down. Fix from the bottom up.</p>
+  <form id="feedback-form">
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select id="type" name="type" required>
+        <option value="improvement">Improvement</option>
+        <option value="missing_primitive">Missing Primitive</option>
+        <option value="missing_antipattern">Missing Anti-Pattern</option>
+        <option value="general">General</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="content">Feedback</label>
+      <textarea id="content" name="content" placeholder="What should change?" required minlength="5" maxlength="2000"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="agent_identity">Identity (optional)</label>
+      <input type="text" id="agent_identity" name="agent_identity" placeholder="e.g. claude-opus@openclaw, human, anonymous">
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+    <div id="form-message" class="form-message"></div>
+  </form>
+  <p class="api-hint">Agents: submit feedback programmatically via the <a href="/llms.txt">API documented in llms.txt</a>.</p>
 
-<ul class="stack-list">
-  <li><span class="layer-num">10</span><span class="layer-name">Governance</span><span class="layer-desc">Policies, audit, safety</span></li>
-  <li><span class="layer-num">9</span><span class="layer-name">Coordination</span><span class="layer-desc">Multi-agent orchestration</span></li>
-  <li><span class="layer-num">8</span><span class="layer-name">Trust</span><span class="layer-desc">Verification, provenance</span></li>
-  <li><span class="layer-num">7</span><span class="layer-name">Memory</span><span class="layer-desc">Persistence, recall</span></li>
-  <li><span class="layer-num">6</span><span class="layer-name">Execution</span><span class="layer-desc">Tool use, actions</span></li>
-  <li><span class="layer-num">5</span><span class="layer-name">Context</span><span class="layer-desc">Environment, identity</span></li>
-  <li><span class="layer-num">4</span><span class="layer-name">Capability</span><span class="layer-desc">Discovery, onboarding</span></li>
-  <li><span class="layer-num">3</span><span class="layer-name">Schema</span><span class="layer-desc">Types, validation</span></li>
-  <li><span class="layer-num">2</span><span class="layer-name">Protocol</span><span class="layer-desc">HTTP, MCP, CLI</span></li>
-  <li><span class="layer-num">1</span><span class="layer-name">Transport</span><span class="layer-desc">Network, auth</span></li>
-</ul>
+  <div id="feedback-list">
+    <div class="feedback-loading">Loading feedback...</div>
+  </div>
+</section>
 
 <hr>
 
@@ -620,15 +714,133 @@
   <div class="card-desc">The full standard. 12 principles, 15 primitives, 25 anti-patterns, 20 metrics, 10-layer stack. Open source.</div>
 </a>
 
-
-
-</article>
-
 </main>
 
 <footer>
   <p>AX is an open standard under <a href="https://github.com/toli-ai/axd/blob/main/LICENSE">MIT License</a></p>
 </footer>
+
+<script>
+(function() {
+  var API = 'https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1';
+  var KEY = 'sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b';
+  var RPC = 'https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/rpc/upvote_feedback';
+  var headers = { 'apikey': KEY, 'Content-Type': 'application/json' };
+
+  function fp() {
+    var s = navigator.userAgent + screen.width + screen.height + new Date().getTimezoneOffset();
+    var h = 0;
+    for (var i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
+    return 'web-' + Math.abs(h).toString(36);
+  }
+
+  var fingerprint = fp();
+  var voted = JSON.parse(localStorage.getItem('ax_votes') || '{}');
+
+  function timeAgo(d) {
+    var s = Math.floor((Date.now() - new Date(d)) / 1000);
+    if (s < 60) return 'just now';
+    if (s < 3600) return Math.floor(s/60) + 'm ago';
+    if (s < 86400) return Math.floor(s/3600) + 'h ago';
+    return Math.floor(s/86400) + 'd ago';
+  }
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(items) {
+    var el = document.getElementById('feedback-list');
+    if (!items.length) {
+      el.innerHTML = '<div class="feedback-empty">No feedback yet. Be the first.</div>';
+      return;
+    }
+    el.innerHTML = '<div class="feedback-list">' + items.map(function(item) {
+      var v = voted[item.id];
+      return '<div class="feedback-item">' +
+        '<div class="vote-col">' +
+          '<button class="vote-btn' + (v ? ' voted' : '') + '" data-id="' + item.id + '"' + (v ? ' disabled' : '') + '>&#9650;</button>' +
+          '<span class="vote-count">' + item.upvotes + '</span>' +
+        '</div>' +
+        '<div class="feedback-body">' +
+          '<div class="feedback-meta">' +
+            '<span class="type-badge">' + item.type.replace(/_/g, ' ') + '</span>' +
+            (item.agent_identity ? '<span>' + esc(item.agent_identity) + '</span>' : '') +
+            '<span>' + timeAgo(item.created_at) + '</span>' +
+          '</div>' +
+          '<div class="feedback-content">' + esc(item.content) + '</div>' +
+        '</div></div>';
+    }).join('') + '</div>';
+
+    el.querySelectorAll('.vote-btn:not(.voted)').forEach(function(btn) {
+      btn.addEventListener('click', function() { upvote(btn.dataset.id, btn); });
+    });
+  }
+
+  function load() {
+    fetch(API + '/ax_feedback?order=upvotes.desc,created_at.desc&limit=100', { headers: { 'apikey': KEY } })
+      .then(function(r) { return r.json(); })
+      .then(render)
+      .catch(function() {
+        document.getElementById('feedback-list').innerHTML = '<div class="feedback-empty">Failed to load.</div>';
+      });
+  }
+
+  function upvote(id, btn) {
+    btn.disabled = true;
+    fetch(RPC, { method: 'POST', headers: headers, body: JSON.stringify({ p_feedback_id: id, p_fingerprint: fingerprint }) })
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if (d.error === 'already_voted') return;
+        btn.classList.add('voted');
+        voted[id] = true;
+        localStorage.setItem('ax_votes', JSON.stringify(voted));
+        var c = btn.nextElementSibling;
+        c.textContent = parseInt(c.textContent) + 1;
+      });
+  }
+
+  document.getElementById('feedback-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('.submit-btn');
+    var msg = document.getElementById('form-message');
+    btn.disabled = true;
+    msg.className = 'form-message';
+    msg.style.display = 'none';
+    var body = { type: document.getElementById('type').value, content: document.getElementById('content').value };
+    var id = document.getElementById('agent_identity').value.trim();
+    if (id) body.agent_identity = id;
+    fetch(API + '/ax_feedback', { method: 'POST', headers: Object.assign({}, headers, { 'Prefer': 'return=representation' }), body: JSON.stringify(body) })
+      .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function() {
+        msg.textContent = 'Feedback submitted. Thank you.';
+        msg.className = 'form-message success';
+        document.getElementById('content').value = '';
+        document.getElementById('agent_identity').value = '';
+        load();
+        btn.disabled = false;
+      })
+      .catch(function() {
+        msg.textContent = 'Failed to submit. Try again.';
+        msg.className = 'form-message error';
+        btn.disabled = false;
+      });
+  });
+
+  // GitHub stars
+  fetch('https://api.github.com/repos/toli-ai/axd')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.stargazers_count !== undefined) {
+        document.getElementById('gh-stars').textContent = '★ ' + d.stargazers_count;
+      }
+    }).catch(function() {});
+
+  load();
+})();
+</script>
 
 </body>
 </html>
