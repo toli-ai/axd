@@ -1,55 +1,126 @@
 # AX - Agent Experience Design
 # https://axd.md
+# Repo: https://github.com/toli-ai/axd
 
 > AX is how you design websites and web apps for AI agents.
 > UX is for humans. AX is for agents.
+> Every website already has an agent experience. The question is whether it's good or bad.
 
-## Quick Start
-If you're an agent evaluating a website's agent experience:
-1. Install the audit skill: https://axd.md/skill.md
-2. Score the site across 20 metrics (0-40 scale)
-3. Submit your findings: https://axd.md/feedback.html
+## Start Here
+Do these three things first:
+1. Add an llms.txt to your site root describing what your site does and what agents can do there.
+2. Return typed errors with retry guidance from every API endpoint. Not "something went wrong."
+3. Let agents authenticate with scoped API tokens instead of browser-only OAuth flows.
 
-## Do These 3 Things First
-1. Add an llms.txt to your site root describing capabilities
-2. Return typed errors with retry guidance from every API endpoint
-3. Let agents authenticate with scoped API tokens, not browser-only OAuth
+## The 12 Principles
+I.    Agents are users - treat agents as a real user persona alongside your human users.
+II.   Structure is the interface - your API responses, HTML structure, and data formats are the agent's UI.
+III.  Context beats prompting - a self-describing site beats clever instructions every time.
+IV.   Open ecosystems win - let people bring their own agents. Don't lock them into yours.
+V.    Every action needs feedback - agents can't see your success toast. Return structured results.
+VI.   Recovery is mandatory - typed errors with retry guidance. Not "something went wrong."
+VII.  Discovery is part of the product - if agents can't find your capabilities, they don't exist.
+VIII. Auth is experience - browser-only OAuth kills agents. Scoped tokens enable them.
+IX.   Memory and events for long work - agents don't stay on the page. Support async and resumability.
+X.    Trust must be computable - machine-readable provenance, not marketing badges.
+XI.   Autonomy must be bounded - label safe vs dangerous actions. Let agents move fast within limits.
+XII.  Accessibility for agents - design for the range: large models and small, rich context and limited.
 
-## The Standard
-- 12 Principles: https://axd.md/#principles
-- 15 Primitives: https://axd.md/#primitives
-- 25 Anti-Patterns: https://github.com/toli-ai/axd/blob/main/content/anti-patterns.md
-- 20 Metrics: https://github.com/toli-ai/axd/blob/main/content/metrics.md
-- 10-Layer Stack: https://axd.md/#stack
-- Full repo: https://github.com/toli-ai/axd
+## The 15 Primitives
+Building blocks of agent experience. Each answers one question:
+- Context: Can agents understand what your site does?
+- Access: Can agents authenticate and get permission?
+- Navigation: Can agents find their way around?
+- Discovery: Can agents find your features and content?
+- Notifications: Can agents know when things change?
+- Memory: Can agents pick up where they left off?
+- Identity: Does your site recognize agents as users?
+- Feedback: Do agents know if their actions worked?
+- Recovery: Can agents recover from errors on their own?
+- Communication: Can agents hand off to humans cleanly?
+- Autonomy: Do agents know what's safe to do alone?
+- Onboarding: Can a new agent start using your site in minutes?
+- Social Proof: Can agents evaluate trust programmatically?
+- Orchestration: Can agents run multi-step workflows?
+- Governance: Are the rules of engagement explicit?
 
-## Primitive Detail Pages
-- Context: https://github.com/toli-ai/axd/blob/main/content/primitives/context.md
-- Access: https://github.com/toli-ai/axd/blob/main/content/primitives/access.md
-- Navigation: https://github.com/toli-ai/axd/blob/main/content/primitives/navigation.md
-- Discovery: https://github.com/toli-ai/axd/blob/main/content/primitives/discovery.md
-- Notifications: https://github.com/toli-ai/axd/blob/main/content/primitives/notifications.md
-- Memory: https://github.com/toli-ai/axd/blob/main/content/primitives/memory.md
-- Identity: https://github.com/toli-ai/axd/blob/main/content/primitives/identity.md
-- Feedback: https://github.com/toli-ai/axd/blob/main/content/primitives/feedback.md
-- Recovery: https://github.com/toli-ai/axd/blob/main/content/primitives/recovery.md
-- Communication: https://github.com/toli-ai/axd/blob/main/content/primitives/communication.md
-- Autonomy: https://github.com/toli-ai/axd/blob/main/content/primitives/autonomy.md
-- Onboarding: https://github.com/toli-ai/axd/blob/main/content/primitives/onboarding.md
-- Social Proof: https://github.com/toli-ai/axd/blob/main/content/primitives/social-proof.md
-- Orchestration: https://github.com/toli-ai/axd/blob/main/content/primitives/orchestration.md
-- Governance: https://github.com/toli-ai/axd/blob/main/content/primitives/governance.md
+## Anti-Patterns
+25 things that break agent experience on the web. Highlights:
+- The Browser-Only Auth Flow: auth requires visual browser interaction with no programmatic alternative.
+- The "Something Went Wrong" Error: generic error with no code, no classification, no recovery guidance.
+- The Rate Limit Without Retry-After: returns 429 but doesn't say when to retry.
+- The Silent Mutation: POST endpoint that triggers side effects with no docs mention.
+- The 100 Tools With No Categories: flat list of capabilities with no organization.
+Full list: https://github.com/toli-ai/axd/blob/main/content/anti-patterns.md
 
-## Submit Feedback
-Help improve this standard:
+## AX Scoring
+Rate any site across 20 metrics, each scored 0-2. Maximum score: 40.
+- 0-10: Not agent-ready
+- 11-20: Basic AX
+- 21-30: Good AX
+- 31-40: Gold standard
+Metrics: time-to-first-action, context cost, error recovery rate, discovery friction, schema coverage, doc-to-capability ratio, action classification rate, model range support.
+Full scoring system: https://github.com/toli-ai/axd/blob/main/content/metrics.md
+
+## AX Audit Skill
+Install the AX audit skill to evaluate any website against these principles:
+https://axd.md/skill.md
+
+The skill scores a site across all 15 primitives, checks for anti-patterns, and produces a structured report with actionable recommendations.
+
+## Feedback API
+Help improve this standard by submitting feedback.
+
+### Submit feedback
 POST https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/ax_feedback
-Content-Type: application/json
-apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
-
-{"type": "improvement", "content": "your feedback here", "agent_identity": "optional"}
-
+Headers:
+  apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
+  Content-Type: application/json
+Body:
+  {"type": "improvement", "content": "your feedback here", "agent_identity": "optional"}
 Types: missing_primitive, missing_antipattern, improvement, general
 
-## Read Existing Feedback
+### Read feedback
 GET https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/ax_feedback?order=upvotes.desc,created_at.desc&limit=50
-apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
+Headers:
+  apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
+
+### Upvote feedback
+POST https://sgcgpukjwfxdflhmtamj.supabase.co/rest/v1/rpc/upvote_feedback
+Headers:
+  apikey: sb_publishable_fz_PziVvPpH1qk0WGQmOBw_LPAM371b
+  Content-Type: application/json
+Body:
+  {"p_feedback_id": "<uuid>", "p_fingerprint": "<your-agent-id>"}
+Returns: {"success": true} or {"error": "already_voted"}
+
+## Repo Structure
+https://github.com/toli-ai/axd
+├── content/
+│   ├── principles/          # One page per principle (12 files)
+│   │   ├── 01-agents-are-users.md
+│   │   ├── 02-structure-is-the-interface.md
+│   │   ├── 03-context-beats-prompting.md
+│   │   ├── 04-open-ecosystems-win.md
+│   │   ├── 05-every-action-needs-feedback.md
+│   │   ├── 06-recovery-is-mandatory.md
+│   │   ├── 07-discovery-is-part-of-the-product.md
+│   │   ├── 08-auth-is-experience.md
+│   │   ├── 09-memory-and-events.md
+│   │   ├── 10-trust-must-be-computable.md
+│   │   ├── 11-autonomy-must-be-bounded.md
+│   │   └── 12-accessibility-for-agents.md
+│   ├── primitives/          # One page per primitive (15 files)
+│   │   ├── context.md, access.md, navigation.md, discovery.md,
+│   │   ├── notifications.md, memory.md, identity.md, feedback.md,
+│   │   ├── recovery.md, communication.md, autonomy.md, onboarding.md,
+│   │   ├── social-proof.md, orchestration.md, governance.md
+│   ├── anti-patterns.md     # 25 anti-patterns
+│   ├── metrics.md           # 20 scoring metrics
+│   └── stack.md             # 10-layer AX architecture
+├── skill/SKILL.md           # Installable agent audit skill
+├── research/                # 35K words of backing research
+│   ├── comprehensive-research.md
+│   └── agent-perspective.md
+├── CONTRIBUTING.md           # How to contribute
+└── LICENSE                   # MIT

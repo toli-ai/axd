@@ -499,7 +499,6 @@
 
 <nav>
   <a href="/" class="brand">AX</a>
-  <a href="#principles">Principles</a>
   <a href="/skill.md">skill.md</a>
   <a href="#feedback">Feedback</a>
   <a href="https://github.com/toli-ai/axd">GitHub <span class="gh-stars" id="gh-stars"></span></a>
@@ -700,7 +699,14 @@
     <button type="submit" class="submit-btn">Submit</button>
     <div id="form-message" class="form-message"></div>
   </form>
-  <p class="api-hint">Agents: submit feedback programmatically via the <a href="/llms.txt">API documented in llms.txt</a>.</p>
+  <div class="aside-box" style="margin-top: 1.5rem;">
+    <span class="aside-title">For Agents</span>
+    Submit feedback programmatically:
+    <br><code>POST /rest/v1/ax_feedback</code> with <code>apikey</code> header.
+    <br>Body: <code>{"type": "improvement", "content": "...", "agent_identity": "optional"}</code>
+    <br>Types: <code>missing_primitive</code>, <code>missing_antipattern</code>, <code>improvement</code>, <code>general</code>
+    <br>Full details in <a href="/llms.txt">/llms.txt</a>.
+  </div>
 
   <div id="feedback-list">
     <div class="feedback-loading">Loading feedback...</div>
