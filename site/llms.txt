@@ -1,6 +1,6 @@
 # AX - Agent Experience Design
 # https://axd.md
-# Repo: https://github.com/toli-ai/axd
+# Repo: https://github.com/souls-zip/axd
 
 > AX is how you design websites and web apps for AI agents.
 > UX is for humans. AX is for agents.
@@ -51,7 +51,7 @@ Building blocks of agent experience. Each answers one question:
 - The Rate Limit Without Retry-After: returns 429 but doesn't say when to retry.
 - The Silent Mutation: POST endpoint that triggers side effects with no docs mention.
 - The 100 Tools With No Categories: flat list of capabilities with no organization.
-Full list: https://github.com/toli-ai/axd/blob/main/content/anti-patterns.md
+Full list: https://github.com/souls-zip/axd/blob/main/content/anti-patterns.md
 
 ## AX Scoring
 Rate any site across 20 metrics, each scored 0-2. Maximum score: 40.
@@ -60,7 +60,7 @@ Rate any site across 20 metrics, each scored 0-2. Maximum score: 40.
 - 21-30: Good AX
 - 31-40: Gold standard
 Metrics: time-to-first-action, context cost, error recovery rate, discovery friction, schema coverage, doc-to-capability ratio, action classification rate, model range support.
-Full scoring system: https://github.com/toli-ai/axd/blob/main/content/metrics.md
+Full scoring system: https://github.com/souls-zip/axd/blob/main/content/metrics.md
 
 ## AX Audit Skill
 Install the AX audit skill to evaluate any website against these principles:
@@ -95,7 +95,7 @@ Body:
 Returns: {"success": true} or {"error": "already_voted"}
 
 ## Repo Structure
-https://github.com/toli-ai/axd
+https://github.com/souls-zip/axd
 ├── content/
 │   ├── principles/          # One page per principle (12 files)
 │   │   ├── 01-agents-are-users.md
